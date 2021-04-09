@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  api_guard_routes for: 'users'
+  
   get 'categories/show'
   get 'categories/create'
   get 'categories/index'
