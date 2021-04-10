@@ -4,6 +4,6 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
 
     def as_json(options={})
-      super(:only => [:username])
+      super(:only => [:email])
     end
 end

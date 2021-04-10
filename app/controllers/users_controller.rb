@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_and_set_user
+
   def show
     
     @user = User.find_by(id: 1)
@@ -13,8 +15,4 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  private
-  def user_id_params
-    nil
-  end
 end
