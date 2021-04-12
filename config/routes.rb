@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   api_guard_routes for: 'users'
+  resources :books
   
   get 'categories/show'
   get 'categories/create'
@@ -8,9 +9,5 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'users/create'
   get 'users/destroy'
-  get 'books', to: 'books#index'
-  get 'books/show'
-  get 'books/create'
-  get 'books/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
