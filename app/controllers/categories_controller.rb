@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_and_set_user
   def show
   end
 

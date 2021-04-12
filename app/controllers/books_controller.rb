@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
   before_action :authenticate_and_set_user
   def index
-    @books = Book.all
+    @user = current_user
+    @books = current_user.books
 
       respond_to do |format|
         format.html # index.html.erb
