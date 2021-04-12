@@ -7,7 +7,6 @@ class BooksController < ApplicationController
     @books = current_user.books
 
       respond_to do |format|
-        format.html # index.html.erb
         format.json { render :json => @books }
       end
   end
@@ -35,7 +34,6 @@ class BooksController < ApplicationController
 
       respond_to do |format|
         format.json { render :json => { result: "Book created." } }
-        # format.json { render :json => params[:book] }
       end
     rescue => exception
       respond_to do |format|
