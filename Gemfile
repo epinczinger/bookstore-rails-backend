@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'activerecord-reset-pk-sequence'
 gem 'rack-cors'
 gem 'hirb'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

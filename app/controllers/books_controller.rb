@@ -33,7 +33,11 @@ class BooksController < ApplicationController
       @new_book.save
 
       respond_to do |format|
-        format.json { render :json => { result: "Book created." } }
+        format.json { render :json => { 
+          result: "Book created.",
+          id: @new_book.id
+          }
+        }
       end
     rescue => exception
       respond_to do |format|
