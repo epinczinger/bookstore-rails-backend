@@ -61,13 +61,15 @@ class BooksController < ApplicationController
     end
   end
 
-  def update 
+  def update
     begin
-      @book = Books.find(params[:id])
-      p request.headers
-      # updatedProgress = request.headers['progress'].to_i + 5
-      # @book.update!(progress: updatedProgress) 
-
+      @book = Book.find(params[:id])
+      updatedProgress = (request.headers["HTTP_PROGRESS"].to_i + 5).to_s
+      @book.update(progress: updatedProgress )
+      respond_to do |format|
+        result = { result: "Book updated." }
+        format.json { render :json => result }
+      end
     rescue => exception
       respond_to do |format|
         error = { result: "Something happened" }
