@@ -3,7 +3,6 @@ class BooksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @user = current_user
     @books = current_user.books
 
       respond_to do |format|
@@ -12,7 +11,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    @user = current_user
     begin
       @book = current_user.books.find(params[:id])
       respond_to do |format|
@@ -59,6 +57,21 @@ class BooksController < ApplicationController
       respond_to do |format|
         e = { result: "Not found or not allowed." }
         format.json { render :json => e }
+      end
+    end
+  end
+
+  def update 
+    begin
+      @book = Books.find(params[:id])
+      p request.headers
+      # updatedProgress = request.headers['progress'].to_i + 5
+      # @book.update!(progress: updatedProgress) 
+
+    rescue => exception
+      respond_to do |format|
+        error = { result: "Something happened" }
+        format.json { render :json => error }
       end
     end
   end
