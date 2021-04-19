@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   api_guard_routes for: 'users'
   resources :books
+  resources :products
   
   get 'categories/show'
   get 'categories/create'
