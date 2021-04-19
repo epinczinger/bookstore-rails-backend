@@ -45,6 +45,7 @@ GEM
     activerecord (6.0.3.6)
       activemodel (= 6.0.3.6)
       activesupport (= 6.0.3.6)
+    activerecord-reset-pk-sequence (0.2.1)
     activestorage (6.0.3.6)
       actionpack (= 6.0.3.6)
       activejob (= 6.0.3.6)
@@ -79,6 +80,7 @@ GEM
     crass (1.0.6)
     erubi (1.10.0)
     ffi (1.15.0)
+    ffi (1.15.0-x64-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
@@ -101,8 +103,11 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.7)
+    nokogiri (1.11.3-x64-mingw32)
+      racc (~> 1.4)
     nokogiri (1.11.3-x86_64-linux)
       racc (~> 1.4)
+    pg (0.18.4-x64-mingw32)
     public_suffix (4.0.6)
     puma (4.3.7)
       nio4r (~> 2.0)
@@ -150,6 +155,8 @@ GEM
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
       sassc (>= 2.0)
@@ -170,7 +177,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -179,6 +185,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2021.1)
+      tzinfo (>= 1.0.0)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -200,9 +208,11 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+  x64-mingw32
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-reset-pk-sequence
   api_guard
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
@@ -211,6 +221,7 @@ DEPENDENCIES
   hirb
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  pg
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.4)
@@ -218,7 +229,6 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
@@ -229,4 +239,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.2.3
+   2.2.15
